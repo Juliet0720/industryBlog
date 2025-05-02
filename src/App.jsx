@@ -1,16 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Blog from './pages/blog';  // Make sure the path is correct
-import Home from './pages/home';  // Make sure you have a Home component
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Home from "./pages/home"
+import Blog from "./pages/Blog"
+import Footer from "./components/footer"
+import "./App.css"
+
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/blog" element={<Blog />} />
-      </Routes>
+      <div className="app-container">
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blog" element={<Blog />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
